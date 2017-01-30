@@ -1,9 +1,6 @@
 (function() {
     function SongPlayer(Fixtures) {
-        /**
-        * @desc Song Player object housing state of song item (pause/play/stop)
-        * @type {Object}
-        */
+        
         var SongPlayer = {};
         
         /**
