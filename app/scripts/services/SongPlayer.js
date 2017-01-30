@@ -83,6 +83,12 @@
         SongPlayer.currentTime = null;
         
         /**
+        * @desc Volume bar level, initial load?
+        * @type {Number}
+        */
+        SongPlayer.volume = 20;
+        
+        /**
          * @function play
          * @desc Play current or new song
          * @param {Object} song
@@ -156,10 +162,24 @@
             }
         };
         
+        /**
+        * @function set Volume
+        * @desc Volume control, updates volume based on new volume value
+        * @param {Number} volume
+        */
+        SongPlayer.setVolume = function(volume) {
+            if (currentBuzzObject) {
+                currentBuzzObject.setVolume(volume);
+            }
+            
+            SongPlayer.volume = volume;
+            
+        };
+        
         return SongPlayer;
      }
  
      angular
          .module('blocJams')
-         .factory('SongPlayer', ['$rootScope','Fixtures', SongPlayer]);
+         .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
  })();

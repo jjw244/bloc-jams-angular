@@ -34,7 +34,7 @@
                 var percentString = function () {
                     var value = scope.value;
                     var max = scope.max;
-                    var percent = value / max * 100;
+                    var percent = (value / max) * 100;
                     return percent + "%";
                 };
 
